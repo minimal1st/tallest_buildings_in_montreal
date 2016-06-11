@@ -1,8 +1,6 @@
 # Front-End Web Developer Nanodegree
 # Project: The Tallest Buildings of Montréal
 
-### HTML, CSS, JavaScript, jQuery, Google Maps API, AJAX. 
-
 ### How to Launch the Application
 
 - To launch the application, download the folder containing the source files and open `index.html`.
