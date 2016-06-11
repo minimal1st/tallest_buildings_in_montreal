@@ -1,55 +1,35 @@
 # Front-End Web Developer Nanodegree
-# Project: Neighborhood Map
+# Project: The Tallest Buildings of Montréal
 
-## The Tallest Buildings of Montréal
+### Languages and technologies used: HTML, CSS, JavaScript, jQuery, Google Maps API, AJAX. 
 
-### Languages and technologies used: 
-#### HTML, CSS, JavaScript, jQuery, Google Maps API, AJAX. 
+### How to Launch the Application
 
-##### Overview of the Project
+-To launch the application, download the folder containing the source files and open `index.html` in your favorite browser.
 
-<> Files of the project: 
+### Overview of the Project
 
-	js/app.js: contains the logic of the application
-	index.html: contains the structure of the page
-	css/main.css: stylesheet [css]
-	README.md: mmmmm..
+- The project is a one-page application that displays the 26 tallest buildings in the city of Montreal. 
+- The application can be divided into four sections: the sidebar, the top navbar, the map, and the filter.
+- The filter is an input box allowing the user to enter text. 
+- The locations are filtered based on the text entered in the filter input box.
+- At any given time, only the locations that match the filter text appear in the list or on the map.
+- When the application is initially loaded, all buildings are located on the map and information about them can be obtained by either clicking on their marker or on the item in the list appearing in the sidebar.
+- When a user clicks on a marker or on a list item, the associated marker is animated and an InfoWindow is opened.
+- The InfoWindow contains information about the building, which is pulled from Wikipedia via AJAX request. A picture of the building is also displayed. 
+- The application is responsive and should be usable on all devices.
+- The map is generated with the help of Google Maps API.
+- Knockout.js, which provides declarative bindings, dependency tracking and automatic UI refreshes as been used in this project.
 
-<> The project is a one-page application that displays the 26 tallest buildings in the city of Montreal. 
+#### Learning objectives
 
-<> The application can be divided into four sections: the sidebar, the top navbar, the map, and the filter.
+-The goal of this project was to learn how design patterns can assist in developing a manageable codebase. 
 
-<> The filter is an input box allowing the user to enter text. 
+-More specifically, how frameworks (Knockout.js, in this case) can decrease the time required to develop an application and provide a number of utilities to use.
 
-<> The locations are filtered based on the text entered in the filter input box.
+-Another objective was to learn how to implement third-party APIs (Wikipedia and Google Maps API, in this case) that provide valuable data sets, which can improve the quality of various applications.
 
-<> At any given time, only the locations that match the filter text appear in the list or on the map.
-
-<> When the application is initially loaded, all buildings are located on the map and information about them can be obtained by either clicking on their marker or on the item in the list appearing in the sidebar.
-
-<> When a user clicks on a marker or on a list item, the associated marker is animated and an InfoWindow is opened.
-
-<> The InfoWindow contains information about the building, which is pulled from Wikipedia via AJAX request. A picture of the building is also displayed. 
-
-<> The application is responsive and should be usable on all devices.
-
-<> The map is generated with the help of Google Maps API.
-
-<> Knockout.js, which provides declarative bindings, dependency tracking and automatic UI refreshes as been used in this project.
-
-##### Learning objectives
-
-The goal of this project was to learn how design patterns can assist in developing a manageable codebase. 
-
-More specifically, how frameworks (Knockout.js, in this case) can decrease the time required to develop an application and provide a number of utilities to use.
-
-Another objective was to learn how to implement third-party APIs (Wikipedia and Google Maps API, in this case) that provide valuable data sets, which can improve the quality of various applications.
-
-##### How to Launch the Application
-
-To launch the application, download the folder containing the source files and open `index.html` in your favorite browser.
-
-##### Project Specifications from Udacity
+### Project Specifications from Udacity
 
 -*Use Knockout.js to handle list, filter and any other information on the page that is subject to changing state.*
 
@@ -91,7 +71,14 @@ To launch the application, download the folder containing the source files and o
 
 -*Error Handling: In case of error (e.g. in a situation where a third party API does not return the expected result) we expect your webpage to do one of the following: A message is displayed notifying the user that the data can't be loaded, OR There are no negative repercussions to the UI. 
 
-##### License
+#### Files of the project: 
+
+	js/app.js: contains the logic of the application.
+	index.html: contains the structure of the page.
+	css/main.css: css stylesheet.
+	README.md: the readme file.
+	
+#### License
 
 MIT License
 
