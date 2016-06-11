@@ -1,7 +1,7 @@
 # Front-End Web Developer Nanodegree
 # Project: The Tallest Buildings of Montréal
 
-### Languages and technologies used: HTML, CSS, JavaScript, jQuery, Google Maps API, AJAX. 
+### HTML, CSS, JavaScript, jQuery, Google Maps API, AJAX. 
 
 ### How to Launch the Application
 
