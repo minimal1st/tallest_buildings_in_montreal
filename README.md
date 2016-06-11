@@ -19,7 +19,7 @@
 - The InfoWindow contains information about the building, which is pulled from Wikipedia via AJAX request. A picture of the building is also displayed. 
 - The application is responsive and should be usable on all devices.
 - The map is generated with the help of Google Maps API.
-- Knockout.js, which provides declarative bindings, dependency tracking and automatic UI refreshes as been used in this project.
+- Knockout.js, which provides declarative bindings, dependency tracking and automatic UI refreshes has been used in this project.
 
 #### Learning objectives
 
