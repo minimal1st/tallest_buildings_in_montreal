@@ -5,7 +5,7 @@
 
 ### How to Launch the Application
 
--To launch the application, download the folder containing the source files and open `index.html` in your favorite browser.
+- To launch the application, download the folder containing the source files and open `index.html` in your favorite browser.
 
 ### Overview of the Project
 
