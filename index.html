@@ -1,0 +1,112 @@
+<!--
+
+##################################################
+<> username: minimal1st.
+<> project: neighborhood_map.
+<> coding: utf-8.
+<> last updated: june 11th 2016.
+##################################################  
+   
+<> Overview of the Project
+
+<> Files of the project: js/app.js, index.html, css/main.css and README.md. 
+
+<> app.js contains the logic of the application in JavaScript, index.html the structure of the page, and main.css is the stylesheet.
+
+<> The project is a one-page application that displays the 26 tallest buildings in the city of Montreal. 
+
+<> The application can be divided into three sections: the sidebar, the top navbar, and the map.
+
+<> In the sidebar, there is a list of the 26 tallest buildings in the city of Montreal.
+
+<> All buildings are by default located on the map and information about them can be obtained by either clicking on their map marker or the item in the list in the sidebar.
+
+<> If the user clicks on one of these items, the associated marker is animated and an InfoWindow is opened.
+
+<> The InfoWindow contains information about the building, which is pulled from Wikipedia. A picture of the building is also displayed. 
+
+<> The application is responsive and should be usable on all devices.
+
+<> The programming languages that were used are the following:
+
+<> HTML, CSS, JavaScript, jQuery, Knockout.js.
+
+<> The map is a courtesy of the Google Maps API.
+
+##################################################
+
+index.hmtl is the only file that needs to be open in order to launch the application. It contains the structure of our application, including the fixed top navbar, the sidebar and the map. 
+
+This file imports our app.js, where most of our code resides, Bootstrap, jQuery and Knockout. 
+
+Check out the element that have data-bind attributes. 
+
+Parts of the user interface are bound to knockout observables. Knockout tracks these observables for 
+any changes, and, if any changes occurs, it makes 
+sure that our UI, if it relies on any of these 
+observables, is automatically updated. 
+-->
+
+<!-- html5 doctype -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- the three meta tags must be before everything else in the head -->
+    <meta charset="utf-8">
+    <!-- use latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- set the width of the viewport equal to the width of the device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tallest buildings in Montreal</title>
+    <!-- minified bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- main.css is the main stylesheet of the application -->
+    <link href="css/main.css" rel="stylesheet">
+    <!-- minified jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- knockoutjs cdn -->
+    <script type='text/javascript' src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
+  </head>
+  <body>
+    <!-- bootstrap navbar inverted colors fixed top -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"> <span class="brand"><span class="glyphicon glyphicon-map-marker markerglyph"></span> The Tallest Buildings in Montréal<span class="markerglyph">.</span></span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <!-- the value of filterText is derived from the value of the input control -->
+            <input type="text" data-bind="value: filterText, valueUpdate:'afterkeydown'" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 sidebar">
+          <!-- for each elements of filteredList -->
+          <ul class="nav nav-sidebar" id='crop' data-bind="foreach: filteredList">
+            <!-- take the title of the element and put it in list item -->
+            <li class="club" data-bind="click: ajaxOpenInfoAndToggleBounce"><a href="#" ><span data-bind="text: title"></span>
+            <span class="glyphicon glyphicon-map-marker markerglyph"></span><div class="numberSquare" data-bind="text: rank"></div></a></li>
+          </ul>
+        </div>
+        <div id="map" class="col-xs-8 col-xs-offset-4 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main"><h1 data-bind="text: scriptNotLoadedMsg, visible: errorOccurred"></h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+    <script async defer onerror="errorOccurred(true)" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLdMUwZeQveBfSkzWovsb0W_chVa6HrgQ&callback=initMap"></script>
+  </body>
+</html>
